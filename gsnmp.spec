@@ -67,7 +67,7 @@ rm -fr %buildroot
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README 
 %{_bindir}/gsnmp-get
-%{_mandir}/man1/gsnmp-get.1.bz2
+%{_mandir}/man1/gsnmp-get.*
 
 %files -n %{lib_name}
 %{_libdir}/libgsnmp.so.*
