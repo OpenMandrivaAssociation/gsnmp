@@ -1,6 +1,7 @@
 %define name	gsnmp
 %define lib_major	0
-%define	lib_name	%mklibname gsnmp %{lib_major}
+%define	lib_name	%mklibname %{name} %{lib_major}
+%define develname	%mklibname %{name} -d
 
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
@@ -33,13 +34,14 @@ Group:		System/Libraries
 This package contains the library needed to run programs dynamically
 linked with libgsnmp.
 
-%package -n 	%{lib_name}-devel
+%package -n 	%{develname}
 Summary:	Development tools for the snmp protocol
 Group:		Development/C
 Requires:	%{lib_name} = %{version}-%{release} glib2-devel
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{lib_name}-devel
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 This package contains the header files and libraries
 necessary for developing programs using libgsnmp.
 
@@ -72,7 +74,7 @@ rm -fr %buildroot
 %files -n %{lib_name}
 %{_libdir}/libgsnmp.so.*
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %{_includedir}/%{name}
 %{_libdir}/libgsnmp.a
 %{_libdir}/libgsnmp.la
