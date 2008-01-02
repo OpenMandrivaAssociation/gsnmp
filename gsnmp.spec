@@ -12,6 +12,7 @@ Group:		Networking/Other
 
 Source0:	ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/%{name}-%{version}.tar.bz2
 Url:		http://www.ibr.cs.tu-bs.de/projects/scli/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libxml2-devel
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel
