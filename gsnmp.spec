@@ -6,7 +6,7 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.2.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		Networking/Other
 
