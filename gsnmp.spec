@@ -6,18 +6,18 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.2.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		Networking/Other
-
-Source0:	ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/%{name}-%{version}.tar.bz2
-Url:		http://www.ibr.cs.tu-bs.de/projects/scli/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+URL:		http://www.ibr.cs.tu-bs.de/projects/scli/
+Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.bz2
+Patch0:		gsnmp-linkage_fix.diff
 BuildRequires:	libxml2-devel
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	libglib2-devel
 BuildRequires:	libgnet2-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 GNET-SNMP is an SNMP library implementation based on glib and gnet. This
@@ -46,14 +46,19 @@ This package contains the header files and libraries
 necessary for developing programs using libgsnmp.
 
 %prep
+
 %setup -q
+%patch0 -p0
 
 %build
-%configure
+autoreconf -fis
+
+%configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+
 %makeinstall
 
 %post
@@ -63,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %_remove_install_info %{name}.info
 
 %clean
-rm -fr %buildroot
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -81,5 +86,3 @@ rm -fr %buildroot
 %{_libdir}/libgsnmp.so
 %{_libdir}/pkgconfig/%{name}.pc
 %{_datadir}/aclocal/%{name}.m4
-
-
