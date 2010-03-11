@@ -6,12 +6,14 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.3.0
-Release:	%mkrel 1
-License:	GPL
+Release:	%mkrel 2
+License:	GPLv2
 Group:		Networking/Other
 URL:		http://www.ibr.cs.tu-bs.de/projects/scli/
 Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.bz2
 Patch0:		gsnmp-linkage_fix.diff
+# (fc) 0.3.0-2mdv fix m4 warning
+Patch1:		gsnmp-0.3.0-fix-underquoted-warning.patch
 BuildRequires:	libxml2-devel
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel
@@ -49,9 +51,10 @@ necessary for developing programs using libgsnmp.
 
 %setup -q
 %patch0 -p0
+%patch1 -p1 -b .fix_underquoted
 
-%build
 autoreconf -fis
+%build
 
 %configure2_5x
 %make
