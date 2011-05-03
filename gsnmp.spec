@@ -6,7 +6,7 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.3.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPLv2
 Group:		Networking/Other
 URL:		http://www.ibr.cs.tu-bs.de/projects/scli/
