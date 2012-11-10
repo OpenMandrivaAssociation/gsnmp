@@ -1,0 +1,25 @@
+From 74e2762f4bccc74058faf7877d9eaa6dc2f44714 Mon Sep 17 00:00:00 2001
+From: Frederic Crozat <fcrozat@mandriva.com>
+Date: Thu, 11 Mar 2010 11:54:45 +0100
+Subject: [PATCH] fix underquoted warning
+
+---
+ gsnmp.m4 |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/gsnmp.m4 b/gsnmp.m4
+index 0f3d286..b06e601 100644
+--- a/gsnmp.m4
++++ b/gsnmp.m4
+@@ -1,7 +1,7 @@
+ dnl AM_PATH_GSNMP()
+ dnl 
+ 
+-AC_DEFUN(AM_PATH_GSNMP,
++AC_DEFUN([AM_PATH_GSNMP],
+ [
+   PKG_CHECK_MODULES(GSNMP, glib-2.0 >= 2.0.1)
+ ])
+-- 
+1.7.0.2
+
