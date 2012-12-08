@@ -6,7 +6,7 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.3.0
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2
 Group:		Networking/Other
 URL:		http://www.ibr.cs.tu-bs.de/projects/scli/
@@ -60,8 +60,6 @@ autoreconf -fis
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall
 
 %post
@@ -70,11 +68,7 @@ rm -rf %{buildroot}
 %preun
 %_remove_install_info %{name}.info
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README 
 %{_bindir}/gsnmp-get
 %{_mandir}/man1/gsnmp-get.*
@@ -85,7 +79,66 @@ rm -rf %{buildroot}
 %files -n %{develname}
 %{_includedir}/%{name}
 %{_libdir}/libgsnmp.a
-%{_libdir}/libgsnmp.la
 %{_libdir}/libgsnmp.so
 %{_libdir}/pkgconfig/%{name}.pc
 %{_datadir}/aclocal/%{name}.m4
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.3.0-5mdv2011.0
++ Revision: 664931
+- mass rebuild
+
+* Thu Dec 02 2010 Oden Eriksson <oeriksson@mandriva.com> 0.3.0-4mdv2011.0
++ Revision: 605504
+- rebuild
+
+* Tue Mar 16 2010 Frederic Crozat <fcrozat@mandriva.com> 0.3.0-3mdv2010.1
++ Revision: 521934
+- Fix typo in patch1
+
+* Thu Mar 11 2010 Frederic Crozat <fcrozat@mandriva.com> 0.3.0-2mdv2010.1
++ Revision: 517973
+- Patch1: fix m4 warning
+- run autoreconf at prep time, not build time
+
+* Fri Feb 19 2010 Frederik Himpe <fhimpe@mandriva.org> 0.3.0-1mdv2010.1
++ Revision: 508526
+- update to new version 0.3.0
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 0.2.0-6mdv2010.0
++ Revision: 425048
+- rebuild
+
+* Mon Jul 14 2008 Oden Eriksson <oeriksson@mandriva.com> 0.2.0-5mdv2009.0
++ Revision: 234827
+- fix linkage
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - fix description-line-too-long
+
+* Sat Jan 12 2008 Thierry Vignaud <tv@mandriva.org> 0.2.0-3mdv2008.1
++ Revision: 150239
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Crispin Boylan <crisb@mandriva.org>
+    - Bump release
+
+* Sun Aug 19 2007 Crispin Boylan <crisb@mandriva.org> 0.2.0-1mdv2008.0
++ Revision: 66724
+- New devel naming policy
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - fix man pages
+
+
+* Tue Jan 16 2007 Crispin Boylan <crisb@mandriva.org> 0.2.0-1mdv2007.0
++ Revision: 109642
+- Initial mandriva package
+- Create gsnmp
+
