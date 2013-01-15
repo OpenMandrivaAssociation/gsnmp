@@ -1,0 +1,11 @@
+--- gsnmp-0.3.0/configure.ac.bero	2013-01-15 22:31:35.588610659 +0100
++++ gsnmp-0.3.0/configure.ac	2013-01-15 22:31:43.801515634 +0100
+@@ -6,7 +6,7 @@ AC_CONFIG_SRCDIR(src/gsnmp.h)
+ AM_INIT_AUTOMAKE([-Wall])
+ 
+ dnl create a config.h file (Automake will add -DHAVE_CONFIG_H)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ AC_SUBST(VERSION)
+ 

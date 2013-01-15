@@ -14,12 +14,12 @@ Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.bz2
 Patch0:		gsnmp-linkage_fix.diff
 # (fc) 0.3.0-2mdv fix m4 warning
 Patch1:		gsnmp-0.3.0-fix-underquoted-warning.patch
+Patch2:		gsnmp-0.3.0-automake-1.13.patch
 BuildRequires:	libxml2-devel
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	libglib2-devel
 BuildRequires:	libgnet2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 GNET-SNMP is an SNMP library implementation based on glib and gnet. This
@@ -52,6 +52,7 @@ necessary for developing programs using libgsnmp.
 %setup -q
 %patch0 -p0
 %patch1 -p1 -b .fix_underquoted
+%patch2 -p1 -b .automake13~
 
 autoreconf -fis
 %build
