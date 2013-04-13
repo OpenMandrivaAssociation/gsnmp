@@ -6,7 +6,7 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		%{name}
 Version:	0.3.0
-Release:	%mkrel 6
+Release:	7
 License:	GPLv2
 Group:		Networking/Other
 URL:		http://www.ibr.cs.tu-bs.de/projects/scli/
@@ -15,11 +15,11 @@ Patch0:		gsnmp-linkage_fix.diff
 # (fc) 0.3.0-2mdv fix m4 warning
 Patch1:		gsnmp-0.3.0-fix-underquoted-warning.patch
 Patch2:		gsnmp-0.3.0-automake-1.13.patch
-BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	readline-devel
 BuildRequires:	ncurses-devel
-BuildRequires:	libglib2-devel
-BuildRequires:	libgnet2-devel
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gnet-2.0)
 
 %description
 GNET-SNMP is an SNMP library implementation based on glib and gnet. This
@@ -62,12 +62,6 @@ autoreconf -fis
 
 %install
 %makeinstall
-
-%post
-%_install_info %{name}.info
-
-%preun
-%_remove_install_info %{name}.info
 
 %files
 %doc AUTHORS ChangeLog NEWS README 
