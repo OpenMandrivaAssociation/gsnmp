@@ -9,7 +9,7 @@ Release:	13
 License:	GPLv2
 Group:		Networking/Other
 Url:		http://www.ibr.cs.tu-bs.de/projects/scli/
-Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.bz2
 Patch0:		gsnmp-linkage_fix.diff
 # (fc) 0.3.0-2mdv fix m4 warning
 Patch1:		gsnmp-0.3.0-fix-underquoted-warning.patch
