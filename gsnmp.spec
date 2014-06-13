@@ -5,7 +5,7 @@
 Summary:	An SNMP library implementation based on glib and gnet
 Name:		gsnmp
 Version:	0.3.0
-Release:	13
+Release:	14
 License:	GPLv2
 Group:		Networking/Other
 Url:		http://www.ibr.cs.tu-bs.de/projects/scli/
