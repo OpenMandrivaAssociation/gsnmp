@@ -49,7 +49,7 @@ necessary for developing programs using libgsnmp.
 %prep
 
 %setup -q
-%apply_patches
+%autopatch -p1
 autoreconf -fis
 
 %build
