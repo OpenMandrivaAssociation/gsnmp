@@ -8,7 +8,7 @@ Version:	0.3.0
 Release:	20
 License:	GPLv2
 Group:		Networking/Other
-Url:		http://www.ibr.cs.tu-bs.de/projects/scli/
+Url:		https://www.ibr.cs.tu-bs.de/projects/scli/
 Source0:	ftp://ftp.ibr.cs.tu-bs.de/local/gsnmp/%{name}-%{version}.tar.bz2
 Patch0:		gsnmp-linkage_fix.diff
 # (fc) 0.3.0-2mdv fix m4 warning
