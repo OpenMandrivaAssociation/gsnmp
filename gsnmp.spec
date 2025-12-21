@@ -15,6 +15,11 @@ Patch0:		gsnmp-linkage_fix.diff
 Patch1:		gsnmp-0.3.0-fix-underquoted-warning.patch
 Patch2:		gsnmp-0.3.0-automake-1.13.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	readline-devel
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnet-2.0)
